@@ -15,11 +15,11 @@ or as pipe:
 
 `$ hquery -s "<div id="aa">html string</div>" -e "#aa" -c ".text()"`
 
-`html string`
+-> `html string`
 
 `$ curl -s http://lyuehh.com | hquery -e "h1" -c ".text()"`
 
-`Hi, welcome.`
+-> `Hi, welcome.`
 
 You can use any css selecters and almost any jQuery methods to find what you are looking for in the html string.
 

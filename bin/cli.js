@@ -43,6 +43,9 @@ function run(str) {
         throw 'no string to parse, check your url or argv';
     }
     jsdom.env({html: str,  src: [jquery], done: function(err, window) {
+        if (err) {
+            throw err;
+        }
         var $ = window.$;
         var command = '$("'+ argv.e +'")' + argv.c;
         console.log(eval(command));
