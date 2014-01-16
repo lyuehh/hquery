@@ -10,8 +10,8 @@ var jquery = fs.readFileSync(path.resolve(path.dirname(__dirname) + '/lib/jquery
 var str = '';
 
 function printUsage() {
-    console.log('Usage: hquery -s "<div id="aa">html string</div>" -e "#aa" -c ".text()" ');
-    console.log(' url -s http://lyuehh.com | hquery -e "h1" -c ".text()"');
+    console.log('Usage: hquery -s "<div id=aa>html string</div>" -e "#aa" -c ".text()" ');
+    console.log(' curl -s http://lyuehh.com | hquery -e "h1" -c ".text()"');
     process.exit(0);
 }
 
