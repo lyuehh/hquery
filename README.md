@@ -35,6 +35,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 * 2014-01-16 0.0.1 init
 * 2014-01-17 0.0.2 rewrite and add examples
+* 2014-01-17 0.0.3 fix command options
 
 ## License
 Copyright (c) 2014 lyuehh. Licensed under the MIT license.

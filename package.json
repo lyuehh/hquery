@@ -1,6 +1,6 @@
 {
   "name": "hquery",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "lib/hquery.js",
   "description": "jquery for html in command line",
   "homepage": "https://github.com/lyuehh/hquery",

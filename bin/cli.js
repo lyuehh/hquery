@@ -31,11 +31,8 @@ function printUsage() {
     process.exit(0);
 }
 
-if (argv.h && !argv.r) {
-    printUsage();
-}
-
-if (argv._.length === 0) {
+if (argv.h || (!argv.r && !argv.f)) {
+    console.log('111');
     printUsage();
 }
 
