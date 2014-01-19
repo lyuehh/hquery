@@ -32,7 +32,6 @@ function printUsage() {
 }
 
 if (argv.h || (!argv.r && !argv.f)) {
-    console.log('111');
     printUsage();
 }
 
@@ -75,6 +74,6 @@ function run(str) {
         } else if (argv.f) {
             command = fileContent;
         }
-        console.log(eval(command));
+        eval(command);
     }});
 }
