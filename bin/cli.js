@@ -74,6 +74,6 @@ function run(str) {
         } else if (argv.f) {
             command = fileContent;
         }
-        eval(command);
+        console.log(eval(command));
     }});
 }
