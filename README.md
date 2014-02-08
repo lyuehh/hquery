@@ -15,6 +15,8 @@ Options:
  -s if you want parse html string
  -r the javascript code you want to run
  -f the javascript file you want to run
+ -l if you want to use plugin, available plugins: table2csv
+ -a if you use a plugin, use -a to add arg for the plugin
 ```
 
 ## Examples
@@ -24,6 +26,7 @@ curl -s https://github.com | hquery -p -r '$("title").html()'
 hquery -s '<div id="aa"><p>haha<p></div>' -r '$("#aa").html()'
 hquery -r '_.range(1, 10)'
 curl -s https://github.com | hquery -p -f a.js
+curl -s http://news.mtime.com/2014/01/27/1523487-7.html | hquery -p -l table2csv -a '#newscont table'
 ```
 
 You can use any valid JavaScript code with jQuery and Underscore to parse HTML and look for something interesting.
@@ -34,6 +37,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 ## Release History
 
 * 2014-01-16 0.0.1 init
+* 2014-02-08 0.0.5 add plugins support, now available table2csv
 
 ## License
 Copyright (c) 2014 lyuehh. Licensed under the MIT license.
