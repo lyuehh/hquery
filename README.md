@@ -27,6 +27,7 @@ hquery -s '<div id="aa"><p>haha<p></div>' -r '$("#aa").html()'
 hquery -r '_.range(1, 10)'
 curl -s https://github.com | hquery -p -f a.js
 curl -s http://news.mtime.com/2014/01/27/1523487-7.html | hquery -p -l table2csv -a '#newscont table'
+curl -s http://news.mtime.com/2014/01/27/1523487-7.html | hquery -p -l attr -a 'body a|href'
 ```
 
 You can use any valid JavaScript code with jQuery and Underscore to parse HTML and look for something interesting.
@@ -38,6 +39,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 * 2014-01-16 0.0.1 init
 * 2014-02-08 0.0.5 add plugins support, now available table2csv
+* 2014-08-12 0.0.7 add attr plugin, see example above
 
 ## License
 Copyright (c) 2014 lyuehh. Licensed under the MIT license.
