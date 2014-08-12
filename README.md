@@ -15,7 +15,7 @@ Options:
  -s if you want parse html string
  -r the javascript code you want to run
  -f the javascript file you want to run
- -l if you want to use plugin, available plugins: table2csv
+ -l if you want to use plugin, available plugins: table2csv, attr, csv
  -a if you use a plugin, use -a to add arg for the plugin
 ```
 
