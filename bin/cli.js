@@ -1,12 +1,9 @@
 #!/usr/bin/env node
 
 var argv = require('optimist').argv;
-var jsdom = require('jsdom');
+var cheerio = require('cheerio');
 var fs = require('fs');
-var path = require('path');
-
-var jquery = fs.readFileSync(path.resolve(path.dirname(__dirname) + '/lib/jquery-2.0.3.js'), 'utf8');
-var underscore = fs.readFileSync(path.resolve(path.dirname(__dirname) + '/lib/underscore-1.5.2.js'), 'utf8');
+var _ = require('underscore');
 
 if (argv.f) {
     var fileContent = fs.readFileSync('./' + argv.f, 'utf8');
@@ -65,26 +62,21 @@ function run(str) {
     if (!argv.p && !argv.s) {
         str = '<div><div>';
     }
-    jsdom.env({html: str,  src: [jquery, underscore], done: function(err, window) {
-        if (err) {
-            throw err;
+    $ = cheerio.load(str);
+
+    var command;
+    if (argv.r) {
+        command = argv.r;
+    } else if (argv.f) {
+        command = fileContent;
+    } else if (argv.l) {
+        command = require('../lib/plugins/' + argv.l).run;
+        if (argv.a) {
+            console.log(command($, _, argv.a));
+        } else {
+            console.log(command());
         }
-        var $ = window.$;
-        var _ = window._;
-        var command;
-        if (argv.r) {
-            command = argv.r;
-        } else if (argv.f) {
-            command = fileContent;
-        } else if (argv.l) {
-            command = require('../lib/plugins/' + argv.l).run;
-            if (argv.a) {
-                console.log(command($, _, argv.a));
-            } else {
-                console.log(command());
-            }
-            process.exit(0);
-        }
-        console.log(eval(command));
-    }});
+        process.exit(0);
+    }
+    console.log(eval(command));
 }
