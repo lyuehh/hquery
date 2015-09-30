@@ -28,6 +28,8 @@ function printUsage() {
     console.log('hquery -r \'_.range(1, 10)\'');
     console.log('curl -s https://github.com | hquery -p -f a.js');
     console.log('curl -s http://news.mtime.com/2014/01/27/1523487-7.html | hquery -p -l table2csv -a \'#newscont table\'');
+    console.log('curl -s https://news.ycombinator.com/ | hquery -p -l csv -a \'table .title a|text:title,attr:href\'');
+    console.log('curl -s http://news.mtime.com/2014/01/27/1523487-7.html | hquery -p -l attr -a \'body a|href\'')
     process.exit(0);
 }
 
