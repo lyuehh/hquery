@@ -21,6 +21,7 @@ function printUsage() {
     console.log(' -f the javascript file you want to run');
     console.log(' -l if you want to use plugin, available plugins: table2csv');
     console.log(' -a if you use a plugin, use -a to add arg for the plugin');
+    console.log(' -c use console.log on the result');
     console.log('');
     console.log('Examples: ');
     console.log('curl -s https://github.com | hquery -p -r \'$("title").html()\' ');
@@ -74,11 +75,23 @@ function run(str) {
     } else if (argv.l) {
         command = require('../lib/plugins/' + argv.l).run;
         if (argv.a) {
-            console.log(command($, _, argv.a));
+            if (argv.c) {
+                console.log(command($, _, argv.a));
+            } else {
+                command($, _, argv.a);
+            }
         } else {
-            console.log(command());
+            if (argv.c) {
+                console.log(command());
+            } else {
+                command();
+            }
         }
         process.exit(0);
     }
-    console.log(eval(command));
+    if (argv.c) {
+        console.log(eval(command));
+    } else {
+        eval(command);
+    }
 }
