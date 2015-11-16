@@ -75,7 +75,11 @@ function run(str) {
     } else if (argv.l) {
         command = require('../lib/plugins/' + argv.l).run;
         if (argv.a) {
-            console.log(command($, _, argv.a));
+            if (argv.l === 'json') {
+                console.log(JSON.stringify(command($, _, argv.a), null, 2));
+            } else {
+                console.log(command($, _, argv.a));
+            }
         } else {
             console.log(command());
         }
