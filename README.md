@@ -40,7 +40,7 @@ You can use any valid JavaScript code with jQuery and Underscore to parse HTML a
 * 2014-02-08 0.0.5 add plugins support, now available table2csv
 * 2014-08-12 0.0.7 add attr plugin, see example above
 * 2014-08-12 0.0.8 add csv plugin, see example above
-* 2015-11-16 0.2.0 add json plugin
+* 2015-11-16 0.4.0 add json plugin
 
 ## License
 Copyright (c) 2014 lyuehh. Licensed under the MIT license.

@@ -80,5 +80,9 @@ function run(str) {
         }
         process.exit(0);
     }
-    console.log(eval(command));
+    if (argv.f) {
+        eval(command);
+    } else {
+        console.log(eval(command));
+    }
 }
