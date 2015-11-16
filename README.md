@@ -34,13 +34,18 @@ curl -s https://news.ycombinator.com/ | hquery -p -l json -a 'table .title a|tex
 
 You can use any valid JavaScript code with jQuery and Underscore to parse HTML and look for something interesting.
 
+## Test
+
+* `brew install jq bats`
+* `bats test/*.bats`
+
 ## Release History
 
 * 2014-01-16 0.0.1 init
 * 2014-02-08 0.0.5 add plugins support, now available table2csv
 * 2014-08-12 0.0.7 add attr plugin, see example above
 * 2014-08-12 0.0.8 add csv plugin, see example above
-* 2015-11-16 0.4.0 add json plugin
+* 2015-11-16 0.5.0 add json plugin, add test
 
 ## License
 Copyright (c) 2014 lyuehh. Licensed under the MIT license.
