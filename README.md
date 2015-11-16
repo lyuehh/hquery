@@ -29,6 +29,7 @@ curl -s https://github.com | hquery -p -f a.js
 curl -s http://news.mtime.com/2014/01/27/1523487-7.html | hquery -p -l table2csv -a '#newscont table'
 curl -s http://news.mtime.com/2014/01/27/1523487-7.html | hquery -p -l attr -a 'body a|href'
 curl -s https://news.ycombinator.com/ | hquery -p -l csv -a 'table .title a|text:title,attr:href'
+curl -s https://news.ycombinator.com/ | hquery -p -l json -a 'table .title a|text:title,attr:href'
 ```
 
 You can use any valid JavaScript code with jQuery and Underscore to parse HTML and look for something interesting.
@@ -39,6 +40,7 @@ You can use any valid JavaScript code with jQuery and Underscore to parse HTML a
 * 2014-02-08 0.0.5 add plugins support, now available table2csv
 * 2014-08-12 0.0.7 add attr plugin, see example above
 * 2014-08-12 0.0.8 add csv plugin, see example above
+* 2015-11-16 0.2.0 add json plugin
 
 ## License
 Copyright (c) 2014 lyuehh. Licensed under the MIT license.
