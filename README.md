@@ -30,6 +30,7 @@ curl -s http://news.mtime.com/2014/01/27/1523487-7.html | hquery -p -l table2csv
 curl -s http://news.mtime.com/2014/01/27/1523487-7.html | hquery -p -l attr -a 'body a|href'
 curl -s https://news.ycombinator.com/ | hquery -p -l csv -a 'table .title a|text:title,attr:href'
 curl -s https://news.ycombinator.com/ | hquery -p -l json -a 'table .title a|text:title,attr:href'
+curl -s http://hquery-test.surge.sh/index.html | hquery -p -l json2 -a '.list li;{"title": "a|text", "href":"a|attr:href"}'
 ```
 
 You can use any valid JavaScript code with jQuery and Underscore to parse HTML and look for something interesting.
@@ -46,6 +47,7 @@ You can use any valid JavaScript code with jQuery and Underscore to parse HTML a
 * 2014-08-12 0.0.7 add attr plugin, see example above
 * 2014-08-12 0.0.8 add csv plugin, see example above
 * 2015-11-16 0.5.0 add json plugin, add test
+* 2015-11-29 0.6.0 add json2 plugin, update test
 
 ## License
 Copyright (c) 2014 lyuehh. Licensed under the MIT license.

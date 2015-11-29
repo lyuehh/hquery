@@ -31,6 +31,7 @@ function printUsage() {
     console.log('curl -s https://news.ycombinator.com/ | hquery -p -l csv -a \'table .title a|text:title,attr:href\'');
     console.log('curl -s http://news.mtime.com/2014/01/27/1523487-7.html | hquery -p -l attr -a \'body a|href\'')
     console.log('curl -s https://news.ycombinator.com/ | hquery -p -l json -a \'table .title a|text:title,attr:href\'');
+    console.log('curl -s http://hquery-test.surge.sh/index.html | hquery -p -l json2 -a \'.list li;{"title": "a|text", "href":"a|attr:href"}\'');
     process.exit(0);
 }
 
@@ -75,7 +76,7 @@ function run(str) {
     } else if (argv.l) {
         command = require('../lib/plugins/' + argv.l).run;
         if (argv.a) {
-            if (argv.l === 'json') {
+            if (argv.l === 'json' || argv.l === 'json2') {
                 console.log(JSON.stringify(command($, _, argv.a), null, 2));
             } else {
                 console.log(command($, _, argv.a));
