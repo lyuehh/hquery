@@ -3,7 +3,7 @@
 var argv = require('optimist').argv;
 var cheerio = require('cheerio');
 var fs = require('fs');
-var _ = require('underscore');
+var _ = require('lodash');
 
 if (argv.f) {
     var fileContent = fs.readFileSync('./' + argv.f, 'utf8');

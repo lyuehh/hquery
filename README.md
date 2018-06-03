@@ -1,6 +1,6 @@
 # hquery [![Build Status](https://secure.travis-ci.org/lyuehh/hquery.png?branch=master)](http://travis-ci.org/lyuehh/hquery)
 
-Parse HTML with jQuery and Underscore in your commnd line.
+Parse HTML with jQuery and Lodash in your commnd line.
 
 ## Getting Started
 Install : `npm install hquery -g`
@@ -48,6 +48,7 @@ You can use any valid JavaScript code with jQuery and Underscore to parse HTML a
 * 2014-08-12 0.0.8 add csv plugin, see example above
 * 2015-11-16 0.5.0 add json plugin, add test
 * 2015-11-29 0.6.0 add json2 plugin, update test
+* 2018-06-03 1.0.0 upgrade cheerio version to 1.0.0-rc.2, use lodash replace underscore
 
 ## License
-Copyright (c) 2014 lyuehh. Licensed under the MIT license.
+Copyright (c) 2018 lyuehh. Licensed under the MIT license.

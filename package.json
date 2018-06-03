@@ -1,6 +1,6 @@
 {
   "name": "hquery",
-  "version": "0.6.0",
+  "version": "1.0.0",
   "main": "lib/hquery.js",
   "description": "jquery for html in command line",
   "homepage": "https://github.com/lyuehh/hquery",
@@ -25,11 +25,10 @@
   "bin": {
     "hquery": "./bin/cli.js"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "dependencies": {
-    "cheerio": "^0.19.0",
-    "optimist": "~0.6.0",
-    "underscore": "^1.8.3"
+    "cheerio": "^1.0.0-rc.2",
+    "lodash": "^4.17.10",
+    "optimist": "~0.6.0"
   }
 }
